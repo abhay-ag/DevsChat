@@ -23,12 +23,12 @@ const styles = StyleSheet.create({
   footContainer: {
     position: "absolute",
     bottom: 0,
-    height: 70,
     backgroundColor: "rgb(10,15,20)",
     flexDirection: "row",
     justifyContent: "space-around",
     width: "100%",
     paddingTop: 15,
+    paddingBottom: 20,
     borderTopWidth: 2,
     borderColor: 'rgba(255,255,255,0.1)',
   },
