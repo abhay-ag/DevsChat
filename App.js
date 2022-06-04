@@ -1,9 +1,17 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
-import Footer from './components/Footer';
-import Header from './components/Header';
+import AppLoading from "expo-app-loading";
+import { useFonts } from "expo-font";
+import Footer from "./components/Footer";
+import { StyleSheet, Text, View } from "react-native";
+import Header from "./components/Header";
+import { useState } from "react";
 
 export default function App() {
+  let [fontsLoaded] = useFonts({
+    Dancing_Script: require("./assets/fonts/DancingScript.ttf"),
+  });
+  if (!fontsLoaded) {
+    return <AppLoading/>;
+  }
   return (
     <View style={styles.container}>
       <Header />
@@ -15,6 +23,6 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    position: 'relative'
+    position: "relative",
   },
 });
