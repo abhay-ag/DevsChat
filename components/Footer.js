@@ -24,13 +24,13 @@ const styles = StyleSheet.create({
     position: "absolute",
     bottom: 0,
     height: 70,
-    backgroundColor: "rgb(24,24,27)",
+    backgroundColor: "rgb(10,15,20)",
     flexDirection: "row",
     justifyContent: "space-around",
     width: "100%",
     paddingTop: 15,
     borderTopWidth: 2,
-    borderColor: 'rgb(35,35,38)'
+    borderColor: 'rgba(255,255,255,0.1)',
   },
   icons: {
     color: "white",
