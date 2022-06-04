@@ -7,7 +7,7 @@ import { useState } from "react";
 
 export default function App() {
   let [fontsLoaded] = useFonts({
-    Dancing_Script: require("./assets/fonts/DancingScript.ttf"),
+    Dancing_Script: require("./assets/fonts/Courgette.ttf"),
   });
   if (!fontsLoaded) {
     return <AppLoading/>;
