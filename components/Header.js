@@ -37,6 +37,8 @@ const styles = StyleSheet.create({
     paddingHorizontal: 10,
     paddingVertical: 7,
     width: "100%",
+    borderBottomWidth: 1,
+    borderColor: 'rgba(255,255,255,0.1)',
   },
   heading: {
     fontFamily: "Dancing_Script",

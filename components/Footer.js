@@ -29,7 +29,7 @@ const styles = StyleSheet.create({
     width: "100%",
     paddingTop: 15,
     paddingBottom: 20,
-    borderTopWidth: 2,
+    borderTopWidth: 1,
     borderColor: 'rgba(255,255,255,0.1)',
   },
   icons: {

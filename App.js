@@ -3,7 +3,6 @@ import { useFonts } from "expo-font";
 import Footer from "./components/Footer";
 import { StyleSheet, Text, View } from "react-native";
 import Header from "./components/Header";
-import { useState } from "react";
 
 export default function App() {
   let [fontsLoaded] = useFonts({
@@ -24,5 +23,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     position: "relative",
+    backgroundColor: 'rgb(20,25,30)'
   },
 });
