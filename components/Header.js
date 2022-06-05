@@ -8,6 +8,7 @@ import {
 } from "react-native";
 import React from "react";
 import Icon from "react-native-vector-icons/Ionicons";
+import Profile from "./Profile";
 
 export default function Header() {
   return (
@@ -19,6 +20,7 @@ export default function Header() {
           <Icon name="chatbubbles-outline" size={30} style={styles.icon} />
         </TouchableOpacity>
       </View>
+      <Profile />
     </SafeAreaView>
   );
 }
