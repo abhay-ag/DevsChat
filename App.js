@@ -12,28 +12,32 @@ let iterator = 0;
 
 export default function App() {
   const profiles = ({ item }) => (
-    <Profile key={item.name} name={item.name} img={item.pic}/>
-  )
+    <Profile key={item.name} name={item.name} img={item.pic} />
+  );
   const post = ({ item }) => {
-    if(iterator === 0){
-      iterator++
+    if (iterator === 0) {
+      iterator++;
       return (
         <View>
-          <FlatList 
-            horizontal = {true}
+          <FlatList
+            horizontal={true}
             data={data}
-            renderItem = {profiles}
-            keyExtractor = {item => item.name}
-            style = {styles.flatList}
-            showsHorizontalScrollIndicator = {false}
+            renderItem={profiles}
+            keyExtractor={(item) => item.name}
+            style={styles.flatList}
+            showsHorizontalScrollIndicator={false}
           />
-          <Posts userImg={item.pic} userName={item.name} userPosts = {item.posts} />
+          <Posts
+            userImg={item.pic}
+            userName={item.name}
+            userPosts={item.posts}
+          />
         </View>
       );
-    }else{
-      return(
-        <Posts userImg={item.pic} userName={item.name} userPosts = {item.posts}/>
-      )
+    } else {
+      return (
+        <Posts userImg={item.pic} userName={item.name} userPosts={item.posts} />
+      );
     }
   };
   let [fontsLoaded] = useFonts({
@@ -66,5 +70,5 @@ const styles = StyleSheet.create({
     paddingVertical: 4,
     borderBottomWidth: 1,
     borderColor: "rgba(255,255,255,0.1)",
-  }
+  },
 });
