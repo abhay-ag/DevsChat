@@ -53,6 +53,7 @@ export default function App() {
         data={data}
         renderItem={post}
         keyExtractor={(item) => item.name}
+        showsVerticalScrollIndicator = {false}
       />
       <Footer />
     </View>
