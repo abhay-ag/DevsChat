@@ -5,10 +5,12 @@ import {
   StyleSheet,
   StatusBar,
   TouchableOpacity,
+  ScrollView
 } from "react-native";
 import React from "react";
 import Icon from "react-native-vector-icons/Ionicons";
 import Profile from "./Profile";
+import { data } from "../data/users.js";
 
 export default function Header() {
   return (
@@ -20,7 +22,13 @@ export default function Header() {
           <Icon name="chatbubbles-outline" size={30} style={styles.icon} />
         </TouchableOpacity>
       </View>
-      <Profile />
+      <ScrollView style={styles.profile} contentContainerStyle={{flexDirection:'row'}} horizontal = {true}>
+      {
+        data.map(user => (
+          <Profile key = {user.name} name = {user.name} img = {user.pic}/>
+        ))
+      }
+      </ScrollView>
     </SafeAreaView>
   );
 }
@@ -49,5 +57,8 @@ const styles = StyleSheet.create({
   },
   icon: {
     color: "white",
+  },profile: {
+    flexDirection: "row",
+    backgroundColor: "rgb(20,25,30)",
   },
 });

@@ -1,46 +1,34 @@
-import { View, Text, StyleSheet, Image } from "react-native";
+import { View, Text, StyleSheet, Image, ScrollView } from "react-native";
 import React from "react";
 
-export default function Profile() {
+export default function Profile(props) {
   return (
-    <View style={styles.profile}>
       <View style={styles.container}>
         <Image
-          source={{ uri: "https://randomuser.me/api/portraits/men/50.jpg" }}
+          source={{ uri: `${props.img}` }}
           style={styles.profileImg}
         />
-        <Text style={styles.profileText}>Your Story</Text>
+        <Text style={styles.profileText}>{props.name}</Text>
       </View>
-      <View style={styles.container}>
-        <Image
-          source={{ uri: "https://randomuser.me/api/portraits/men/50.jpg" }}
-          style={styles.profileImg}
-        />
-        <Text style={styles.profileText}>Your Story</Text>
-      </View>
-    </View>
   );
 }
 const styles = StyleSheet.create({
-  profile: {
-    flexDirection: "row",
-    flexWrap: "nowrap",
-    paddingHorizontal: 5,
-    backgroundColor: "rgb(20,25,30)",
-  },
   container: {
-    marginTop: 5,
+    marginTop: 8,
     alignItems: "center",
-    marginHorizontal: 5,
+    marginHorizontal: 7,
+    flexWrap: 'wrap',
+    maxWidth: 80
   },
   profileImg: {
-    width: 80,
-    height: 80,
-    borderRadius: 80 / 2,
+    width: 75,
+    height: 75,
+    borderRadius: 75 / 2,
   },
   profileText: {
     color: "white",
     fontWeight: "700",
     marginTop: 5,
+    textAlign: 'center'
   },
 });
