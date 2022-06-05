@@ -5,7 +5,7 @@ import {
   StyleSheet,
   StatusBar,
   TouchableOpacity,
-  ScrollView
+  ScrollView,
 } from "react-native";
 import React from "react";
 import Icon from "react-native-vector-icons/Ionicons";
@@ -16,18 +16,23 @@ export default function Header() {
   return (
     <SafeAreaView style={styles.mainCont}>
       <View style={styles.container}>
-        <StatusBar barStyle="light-content" backgroundColor={'rgb(10,15,20)'}/>
+        <StatusBar barStyle="light-content" backgroundColor={"rgb(10,15,20)"} />
         <Text style={styles.heading}>DevsChat</Text>
         <TouchableOpacity>
           <Icon name="chatbubbles-outline" size={30} style={styles.icon} />
         </TouchableOpacity>
       </View>
-      <ScrollView style={styles.profile} contentContainerStyle={{flexDirection:'row'}} horizontal = {true} showsHorizontalScrollIndicator = {false}>
-      {
-        data.map(user => (
-          <Profile key = {user.name} name = {user.name} img = {user.pic}/>
-        ))
-      }
+      <ScrollView style = {styles.scrollCont}>
+        <ScrollView
+          style={styles.profile}
+          contentContainerStyle={{ flexDirection: "row" }}
+          horizontal={true}
+          showsHorizontalScrollIndicator={false}
+        >
+          {data.map((user) => (
+            <Profile key={user.name} name={user.name} img={user.pic} />
+          ))}
+        </ScrollView>
       </ScrollView>
     </SafeAreaView>
   );
@@ -55,11 +60,14 @@ const styles = StyleSheet.create({
   },
   icon: {
     color: "white",
-  },profile: {
+  },
+  profile: {
     flexDirection: "row",
-    backgroundColor: "rgb(20,25,30)",
+    backgroundColor: "rgb(10,15,20)",
     paddingVertical: 4,
     borderBottomWidth: 1,
-    borderColor: 'rgba(255,255,255,0.1)',
+    borderColor: "rgba(255,255,255,0.1)",
   },
+  scrollCont: {
+  }
 });
