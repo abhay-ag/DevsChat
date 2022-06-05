@@ -21,8 +21,6 @@ export default function Footer() {
 }
 const styles = StyleSheet.create({
   footContainer: {
-    position: "absolute",
-    bottom: 0,
     backgroundColor: "rgb(10,15,20)",
     flexDirection: "row",
     justifyContent: "space-around",

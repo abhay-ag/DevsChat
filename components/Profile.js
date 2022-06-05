@@ -17,13 +17,12 @@ const styles = StyleSheet.create({
     marginVertical: 4,
     alignItems: "center",
     marginHorizontal: 7,
-    flexWrap: 'wrap',
-    maxWidth: 80
+    maxWidth: 85,
   },
   profileImg: {
-    width: 75,
-    height: 75,
-    borderRadius: 75 / 2,
+    width: 65,
+    height: 65,
+    borderRadius: 65 / 2,
   },
   profileText: {
     color: "white",

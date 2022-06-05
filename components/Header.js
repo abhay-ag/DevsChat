@@ -22,25 +22,21 @@ export default function Header() {
           <Icon name="chatbubbles-outline" size={30} style={styles.icon} />
         </TouchableOpacity>
       </View>
-      <ScrollView style = {styles.scrollCont}>
-        <ScrollView
-          style={styles.profile}
-          contentContainerStyle={{ flexDirection: "row" }}
-          horizontal={true}
-          showsHorizontalScrollIndicator={false}
-        >
-          {data.map((user) => (
-            <Profile key={user.name} name={user.name} img={user.pic} />
-          ))}
-        </ScrollView>
+      <ScrollView
+        style={styles.profile}
+        contentContainerStyle={{ flexDirection: "row" }}
+        horizontal={true}
+        showsHorizontalScrollIndicator={false}
+      >
+        {data.map((user) => (
+          <Profile key={user.name} name={user.name} img={user.pic} />
+        ))}
       </ScrollView>
     </SafeAreaView>
   );
 }
 const styles = StyleSheet.create({
   mainCont: {
-    position: "absolute",
-    top: 0,
     width: "100%",
     backgroundColor: "rgb(10,15,20)",
   },
@@ -68,6 +64,5 @@ const styles = StyleSheet.create({
     borderBottomWidth: 1,
     borderColor: "rgba(255,255,255,0.1)",
   },
-  scrollCont: {
-  }
+  scrollCont: {},
 });
