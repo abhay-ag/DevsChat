@@ -22,16 +22,6 @@ export default function Header() {
           <Icon name="chatbubbles-outline" size={30} style={styles.icon} />
         </TouchableOpacity>
       </View>
-      <ScrollView
-        style={styles.profile}
-        contentContainerStyle={{ flexDirection: "row" }}
-        horizontal={true}
-        showsHorizontalScrollIndicator={false}
-      >
-        {data.map((user) => (
-          <Profile key={user.name} name={user.name} img={user.pic} />
-        ))}
-      </ScrollView>
     </SafeAreaView>
   );
 }
