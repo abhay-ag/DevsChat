@@ -27,12 +27,12 @@ export default function App() {
             style = {styles.flatList}
             showsHorizontalScrollIndicator = {false}
           />
-          <Posts userImg={item.pic} userName={item.name} />
+          <Posts userImg={item.pic} userName={item.name} userPosts = {item.posts} />
         </View>
       );
     }else{
       return(
-        <Posts userImg={item.pic} userName={item.name} />
+        <Posts userImg={item.pic} userName={item.name} userPosts = {item.posts}/>
       )
     }
   };
