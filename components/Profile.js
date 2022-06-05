@@ -14,7 +14,7 @@ export default function Profile(props) {
 }
 const styles = StyleSheet.create({
   container: {
-    marginTop: 8,
+    marginVertical: 4,
     alignItems: "center",
     marginHorizontal: 7,
     flexWrap: 'wrap',
