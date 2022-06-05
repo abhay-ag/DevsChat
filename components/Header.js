@@ -13,7 +13,7 @@ export default function Header() {
   return (
     <SafeAreaView style={styles.mainCont}>
       <View style={styles.container}>
-        <StatusBar barStyle="light-content" />
+        <StatusBar barStyle="light-content" backgroundColor={'rgb(10,15,20)'}/>
         <Text style={styles.heading}>DevsChat</Text>
         <TouchableOpacity>
           <Icon name="chatbubbles-outline" size={30} style={styles.icon} />
