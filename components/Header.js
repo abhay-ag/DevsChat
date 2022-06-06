@@ -13,25 +13,41 @@ import Profile from "./Profile";
 import { data } from "../data/users.js";
 import { useNavigation } from "@react-navigation/native";
 
-export default function Header( {showChat, showBack} ) {
+export default function Header({ showChat, showBack }) {
   const navigation = useNavigation();
 
-    const onPressHandler = () => {
-        navigation.navigate('Messages')
-    }
+  const onPressHandler = () => {
+    navigation.navigate("Messages");
+  };
+
+  const goBack = () => {
+    navigation.goBack()
+  }
   return (
     <SafeAreaView style={styles.mainCont}>
       <View style={styles.container}>
         <StatusBar barStyle="light-content" backgroundColor={"rgb(10,15,20)"} />
-        {
-          showBack && <TouchableOpacity>
-            <Icon name="arrow-back" size = {30} style = {styles.icon}/>
+        {showBack && (
+          <TouchableOpacity>
+            <Icon
+              name="arrow-back"
+              size={30}
+              style={styles.icon}
+              onPress={goBack}
+            />
           </TouchableOpacity>
-        }
+        )}
         <Text style={styles.heading}>DevsChat</Text>
-        {showChat && <TouchableOpacity>
-          <Icon name="chatbubbles-outline" size={30} style={styles.icon} onPress = {onPressHandler}/>
-        </TouchableOpacity>}
+        {showChat && (
+          <TouchableOpacity>
+            <Icon
+              name="chatbubbles-outline"
+              size={30}
+              style={styles.icon}
+              onPress={onPressHandler}
+            />
+          </TouchableOpacity>
+        )}
       </View>
     </SafeAreaView>
   );
