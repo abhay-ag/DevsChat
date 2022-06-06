@@ -18,7 +18,7 @@ export default function Message(props) {
 const styles = StyleSheet.create({
   messageContainer: {
     paddingVertical: 10,
-    paddingHorizontal: 5,
+    paddingHorizontal: 10,
     flexDirection: "row",
     backgroundColor: "rgb(10,15,20)",
     alignItems: "center",
