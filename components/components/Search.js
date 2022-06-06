@@ -3,17 +3,21 @@ import React from "react";
 import { data } from "../../data/users";
 
 
-export default function Search({ setMess }) {
+export default function Search({ setMess, setRes }) {
   const handleChange = (text) => {
     const inputVal = text.nativeEvent.text;
-    if(inputVal){
+    if(inputVal.length !== 0){
         let filterData = data.filter(ob => {
             if (ob.name.startsWith(inputVal) || ob.rName.startsWith(inputVal)){
                 return ob
             }
         })
+        if(filterData.length === 0){
+            setRes(true)
+        }
         setMess(filterData)
     }else{
+        setRes(false)
         setMess(data)
     }
   };
