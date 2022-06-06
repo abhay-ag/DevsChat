@@ -21,7 +21,7 @@ export default function Messages() {
           data={mess}
           renderItem={renderMessages}
           keyExtractor={(mess) => mess.name}
-        /> : <Text>No result found</Text>
+        /> : <Text style = {styles.error}>No result found</Text>
       }
     </View>
   );
@@ -37,4 +37,10 @@ const styles = StyleSheet.create({
     backgroundColor: "rgb(10,15,20)",
     flex: 1,
   },
+  error: {
+    color: 'white',
+    fontWeight: '700',
+    textAlign: 'center',
+    fontSize: 20
+  }
 });
