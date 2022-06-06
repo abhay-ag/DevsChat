@@ -11,11 +11,11 @@ function Routes() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        {/* <Stack.Screen
+        <Stack.Screen
           name="Home"
           component={Home}
           options={{ headerShown: false }}
-        /> */}
+        />
         <Stack.Screen 
           name="Messages"
           component={Messages}
