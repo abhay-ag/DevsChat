@@ -1,5 +1,5 @@
 import { View, Text, StyleSheet, FlatList } from "react-native";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Header from "./Header";
 import Message from "./components/Message";
 import { data } from "../data/users";
@@ -11,6 +11,13 @@ export default function Messages() {
   const renderMessages = ({ item }) => {
     return <Message name={item.rName} uname={item.name} pic={item.pic} />;
   };
+  useEffect(() => {
+    if(mess.length === 0){
+      setRes(true)
+    }else{
+      setRes(false)
+    }
+  }, [mess])
   return (
     <View style={styles.container}>
       <Header showBack={true} />

@@ -5,10 +5,10 @@ import { data } from "../../data/users";
 
 export default function Search({ setMess, setRes }) {
   const handleChange = (text) => {
-    const inputVal = text.nativeEvent.text;
+    const inputVal = text.nativeEvent.text.toLowerCase();
     if(inputVal.length !== 0){
         let filterData = data.filter(ob => {
-            if (ob.name.toLowerCase().startsWith(inputVal) || ob.rName.startsWith(inputVal)){
+            if (ob.name.toLowerCase().startsWith(inputVal) || ob.rName.toLowerCase().startsWith(inputVal)){
                 return ob
             }
         })
@@ -25,6 +25,7 @@ export default function Search({ setMess, setRes }) {
         placeholderTextColor={"rgba(255,255,255,0.4)"}
         onChange={handleChange}
         autoCapitalize = {"none"}
+        autoCorrect = {false}
       />
     </View>
   );
