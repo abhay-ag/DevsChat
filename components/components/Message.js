@@ -22,8 +22,6 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     backgroundColor: "rgb(10,15,20)",
     alignItems: "center",
-    // borderBottomWidth: 0.3,
-    // borderColor: 'rgba(255,255,255,0.3)'
   },
   profileImg: {
     width: 60,

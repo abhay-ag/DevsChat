@@ -3,6 +3,7 @@ import React, {useState} from "react";
 import Header from "./Header";
 import Message from "./components/Message";
 import { data } from "../data/users";
+import Search from "./components/Search";
 
 export default function Messages() {
   const [mess, setMess] = useState(data)
@@ -12,6 +13,7 @@ export default function Messages() {
   return (
     <View style = {styles.container}>
       <Header showBack={true} />
+      <Search />
       <Text style={styles.text}>Messages</Text>
       <FlatList 
         data={mess}
