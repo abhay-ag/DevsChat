@@ -2,8 +2,8 @@ import { FlatList } from "react-native";
 import { data } from "../data/users";
 import Posts from "./Posts";
 import Profile from "./Profile";
-import { View, Text } from 'react-native'
-import React from 'react'
+import { View, Text } from "react-native";
+import React from "react";
 import { StyleSheet } from "react-native";
 import Footer from "./Footer";
 import Header from "./Header";
@@ -47,11 +47,11 @@ export default function Home() {
         data={data}
         renderItem={post}
         keyExtractor={(item) => item.name}
-        showsVerticalScrollIndicator = {false}
+        showsVerticalScrollIndicator={false}
       />
       <Footer />
     </View>
-  )
+  );
 }
 
 const styles = StyleSheet.create({

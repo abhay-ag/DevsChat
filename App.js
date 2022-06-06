@@ -1,7 +1,7 @@
 import AppLoading from "expo-app-loading";
 import * as Font from "expo-font";
 import { useState } from "react";
-import Home from "./components/Home";
+import Routes from './routes/Routes'
 
 const getFonts = () => Font.loadAsync({
   Dancing_Script: require('./assets/fonts/Courgette.ttf')
@@ -10,7 +10,7 @@ const getFonts = () => Font.loadAsync({
 export default function App() {
   const [fontsLoaded, setFontsLoaded] = useState(false)
   if (fontsLoaded) {
-    return(<Home />)
+    return (<Routes />)
   }
   else {
     return <AppLoading 
