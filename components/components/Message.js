@@ -1,16 +1,16 @@
 import { View, Text, StyleSheet, Image } from "react-native";
 import React from "react";
 
-export default function Message() {
+export default function Message(props) {
   return (
     <View style={styles.messageContainer}>
       <Image
-        source={{ uri: "https://randomuser.me/api/portraits/men/2.jpg" }}
+        source={{ uri: props.pic }}
         style={styles.profileImg}
       />
       <View style={styles.names}>
-        <Text style={styles.name}>Vaibhav Singh</Text>
-        <Text style={styles.userName}>v0nser</Text>
+        <Text style={styles.name}>{props.name}</Text>
+        <Text style={styles.userName}>{props.uname}</Text>
       </View>
     </View>
   );
@@ -22,9 +22,8 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     backgroundColor: "rgb(10,15,20)",
     alignItems: "center",
-    borderBottomWidth: 0.3,
-
-    borderColor: 'rgba(255,255,255,0.3)'
+    // borderBottomWidth: 0.3,
+    // borderColor: 'rgba(255,255,255,0.3)'
   },
   profileImg: {
     width: 60,

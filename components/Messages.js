@@ -1,14 +1,23 @@
-import { View, Text, StyleSheet } from "react-native";
-import React from "react";
+import { View, Text, StyleSheet, FlatList } from "react-native";
+import React, {useState} from "react";
 import Header from "./Header";
 import Message from "./components/Message";
+import { data } from "../data/users";
 
 export default function Messages() {
+  const [mess, setMess] = useState(data)
+  const renderMessages = ({item}) => {
+    return <Message name = {item.rName} uname = {item.name} pic = {item.pic}/>;
+  }
   return (
     <View style = {styles.container}>
       <Header showBack={true} />
       <Text style={styles.text}>Messages</Text>
-      <Message />
+      <FlatList 
+        data={mess}
+        renderItem = {renderMessages}
+        keyExtractor = {mess => mess.name}
+      />
     </View>
   );
 }
