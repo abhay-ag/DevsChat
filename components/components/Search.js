@@ -14,10 +14,11 @@ export default function Search({ setMess, setRes }) {
         })
         if(filterData.length === 0){
             setRes(true)
+        }else{
+            setRes(false)
         }
         setMess(filterData)
     }else{
-        setRes(false)
         setMess(data)
     }
   };
