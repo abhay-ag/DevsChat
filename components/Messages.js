@@ -13,7 +13,7 @@ export default function Messages() {
   return (
     <View style = {styles.container}>
       <Header showBack={true} />
-      <Search />
+      <Search setMess = {setMess}/>
       <Text style={styles.text}>Messages</Text>
       <FlatList 
         data={mess}
