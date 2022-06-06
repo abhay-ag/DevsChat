@@ -42,7 +42,7 @@ export default function Home() {
   };
   return (
     <View style={styles.container}>
-      <Header />
+      <Header showChat={true}/>
       <FlatList
         data={data}
         renderItem={post}
