@@ -8,15 +8,10 @@ export default function Search({ setMess, setRes }) {
     const inputVal = text.nativeEvent.text;
     if(inputVal.length !== 0){
         let filterData = data.filter(ob => {
-            if (ob.name.startsWith(inputVal) || ob.rName.startsWith(inputVal)){
+            if (ob.name.toLowerCase().startsWith(inputVal) || ob.rName.startsWith(inputVal)){
                 return ob
             }
         })
-        if(filterData.length === 0){
-            setRes(true)
-        }else{
-            setRes(false)
-        }
         setMess(filterData)
     }else{
         setMess(data)
