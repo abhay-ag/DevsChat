@@ -9,6 +9,7 @@ import React, { useState } from "react";
 import Icon from "react-native-vector-icons/AntDesign";
 
 export default function Type(props) {
+  const [message, setMessage] = useState('')
   return (
     <View style={styles.chat}>
       <TextInput
@@ -17,13 +18,15 @@ export default function Type(props) {
         placeholderTextColor={"rgba(255,255,255,0.2)"}
         autoCapitalize={"none"}
         autoCorrect={false}
+        value = {message}
+        onChange = {(e) => setMessage(e.nativeEvent.text)}
       />
       <TouchableOpacity>
         <Icon
           name="arrowright"
           size={30}
           style={styles.icon}
-          onPress={() => {}}
+          onPress={() => {setMessage('')}}
         />
       </TouchableOpacity>
     </View>
