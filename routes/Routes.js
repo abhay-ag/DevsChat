@@ -5,6 +5,7 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import Home from "../components/Home";
 import Messages from "../components/Messages";
 import Chat from "../components/Chat";
+import Login from "../components/Login";
 
 const Stack = createNativeStackNavigator();
 
@@ -14,7 +15,7 @@ function Routes() {
       <Stack.Navigator>
         <Stack.Screen
           name="Home"
-          component={Home}
+          component={Login}
           options={{ headerShown: false }}
         />
         <Stack.Screen 
