@@ -39,7 +39,6 @@ const styles = StyleSheet.create({
     flexDirection: "row",
   },
   input: {
-    width: "100%",
     borderRadius: 10,
     backgroundColor: "rgba(255,255,255,0.1)",
     paddingHorizontal: 15,
@@ -47,11 +46,13 @@ const styles = StyleSheet.create({
     fontSize: 20,
     fontWeight: "700",
     color: "white",
+    width: "100%",
   },
   text: {
     fontFamily: "Dancing_Script",
     color: "white",
     fontSize: 50,
+    marginBottom: 25,
   },
   innerContainer: {
     flex: 1,
@@ -62,7 +63,6 @@ const styles = StyleSheet.create({
     flex: 1,
     color: "white",
     fontWeight: "700",
-    backgroundColor: "#3b82f6",
     fontSize: 23,
     textAlign: "center",
     borderRadius: 15,
@@ -70,6 +70,7 @@ const styles = StyleSheet.create({
     paddingVertical: 5,
   },
   cusBut: {
+    backgroundColor: "#3b82f6",
     flexDirection: "row",
     marginTop: 10,
     alignItems: "center",
