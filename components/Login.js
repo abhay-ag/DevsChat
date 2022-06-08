@@ -5,11 +5,28 @@ import {
   TextInput,
   KeyboardAvoidingView,
   TouchableOpacity,
+  Alert
 } from "react-native";
-import React from "react";
+import React, { useState } from "react";
 import { data } from "../data/users";
+import { useNavigation } from "@react-navigation/native";
 
+let users = [];
+const getUsers = async () => {
+  users = data.map((ob) => ob.name);
+};
+getUsers();
 export default function Login() {
+  const navigation = useNavigation()
+  const [val, setVal] = useState("");
+  const pressHandler = () => {
+    if(users.indexOf(val) === -1){
+        Alert.alert('Error','No such User Exists', {text: 'OK'})
+        setVal('')
+    }else{
+        navigation.navigate('Home')
+    }
+  };
   return (
     <KeyboardAvoidingView
       behavior={Platform.OS === "ios" ? "padding" : "height"}
@@ -21,8 +38,12 @@ export default function Login() {
           style={styles.input}
           placeholder="Enter user name"
           placeholderTextColor={"rgba(255,255,255,0.16)"}
+          onChange={(e) => setVal(e.nativeEvent.text)}
+          autoCapitalize={"none"}
+          autoCorrect={false}
+          value = {val}
         />
-        <TouchableOpacity style={styles.cusBut}>
+        <TouchableOpacity style={styles.cusBut} onPress={pressHandler}>
           <Text style={styles.button}>Login</Text>
         </TouchableOpacity>
       </View>

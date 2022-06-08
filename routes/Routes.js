@@ -14,21 +14,28 @@ function Routes() {
     <NavigationContainer>
       <Stack.Navigator>
         <Stack.Screen
-          name="Home"
+          name="Login"
           component={Login}
-          options={{ headerShown: false }}
-        />
-        <Stack.Screen 
-          name="Messages"
-          component={Messages}
-          options = {{
-              headerShown: false
+          options={{
+            headerShown: false,
           }}
         />
-        <Stack.Screen 
+        <Stack.Screen
+          name="Home"
+          component={Home}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="Messages"
+          component={Messages}
+          options={{
+            headerShown: false,
+          }}
+        />
+        <Stack.Screen
           name="Chat"
           component={Chat}
-          options = {{
+          options={{
             headerShown: false,
           }}
         />
