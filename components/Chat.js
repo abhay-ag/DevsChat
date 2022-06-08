@@ -6,8 +6,7 @@ export default function Chat(props) {
   const { name, userName } = props.route.params
   return (
     <View>
-      <Header showBack={true}/>
-      <Text>{userName}</Text>
+      <Header showBack={true} userName = {userName}/>
     </View>
   );
 }

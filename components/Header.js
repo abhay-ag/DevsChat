@@ -10,7 +10,7 @@ import React from "react";
 import Icon from "react-native-vector-icons/Ionicons";
 import { useNavigation } from "@react-navigation/native";
 
-export default function Header({ showChat, showBack }) {
+export default function Header({ showChat, showBack, userName }) {
   const navigation = useNavigation();
 
   const onPressHandler = () => {
@@ -34,7 +34,7 @@ export default function Header({ showChat, showBack }) {
             />
           </TouchableOpacity>
         )}
-        <Text style={styles.heading}>DevsChat</Text>
+        <Text style={styles.heading}>{userName}</Text>
         {showChat && (
           <TouchableOpacity>
             <Icon
@@ -48,6 +48,9 @@ export default function Header({ showChat, showBack }) {
       </View>
     </SafeAreaView>
   );
+}
+Header.defaultProps = {
+  userName : 'DevsChat'
 }
 const styles = StyleSheet.create({
   mainCont: {
