@@ -9,9 +9,10 @@ export default function Chat(props) {
   return (
     <KeyboardAvoidingView
       style={styles.container}
+      behavior={Platform.OS === "ios" ? "padding" : "height"}
     >
       <Header showBack={true} userName={userName} />
-      <View style = {styles.innerContainer}>
+      <View style={styles.innerContainer}>
         <View style={styles.chatContainer}></View>
         <Type name={userName} />
       </View>
@@ -29,6 +30,6 @@ const styles = StyleSheet.create({
   },
   innerContainer: {
     paddingBottom: 15,
-    flex: 1
-  }
+    flex: 1,
+  },
 });
