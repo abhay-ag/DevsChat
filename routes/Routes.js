@@ -29,7 +29,6 @@ function Routes() {
           component={Chat}
           options = {{
             headerShown: false,
-            uName: 'Abhay'
           }}
         />
       </Stack.Navigator>
