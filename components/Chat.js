@@ -9,7 +9,6 @@ export default function Chat(props) {
   return (
     <KeyboardAvoidingView
       style={styles.container}
-      behavior={Platform.OS === "ios" ? "padding" : "height"}
     >
       <Header showBack={true} userName={userName} />
       <View style = {styles.innerContainer}>
