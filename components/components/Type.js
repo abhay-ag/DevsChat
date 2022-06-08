@@ -10,7 +10,6 @@ export default function Type(props) {
         placeholderTextColor={"rgba(255,255,255,0.2)"}
         autoCapitalize = {'none'}
         autoCorrect = {false}
-        autoComplete = {false}
       />
     </View>
   );
