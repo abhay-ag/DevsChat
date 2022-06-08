@@ -5,12 +5,9 @@ import {
   StyleSheet,
   StatusBar,
   TouchableOpacity,
-  ScrollView,
 } from "react-native";
 import React from "react";
 import Icon from "react-native-vector-icons/Ionicons";
-import Profile from "./Profile";
-import { data } from "../data/users.js";
 import { useNavigation } from "@react-navigation/native";
 
 export default function Header({ showChat, showBack }) {
@@ -21,8 +18,8 @@ export default function Header({ showChat, showBack }) {
   };
 
   const goBack = () => {
-    navigation.goBack()
-  }
+    navigation.goBack();
+  };
   return (
     <SafeAreaView style={styles.mainCont}>
       <View style={styles.container}>
