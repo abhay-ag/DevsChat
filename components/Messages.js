@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet, FlatList } from "react-native";
+import { View, Text, StyleSheet, FlatList, StatusBar } from "react-native";
 import React, { useState, useEffect } from "react";
 import Header from "./Header";
 import Message from "./components/Message";
@@ -12,24 +12,27 @@ export default function Messages() {
     return <Message name={item.rName} uname={item.name} pic={item.pic} />;
   };
   useEffect(() => {
-    if(mess.length === 0){
-      setRes(true)
-    }else{
-      setRes(false)
+    if (mess.length === 0) {
+      setRes(true);
+    } else {
+      setRes(false);
     }
-  }, [mess])
+  }, [mess]);
   return (
     <View style={styles.container}>
+      <StatusBar barStyle="light-content" backgroundColor={"rgb(10,15,20)"} />
       <Header showBack={true} />
       <Search setMess={setMess} setRes={setRes} />
       <Text style={styles.text}>Messages</Text>
-      {
-        res === false ? <FlatList
+      {res === false ? (
+        <FlatList
           data={mess}
           renderItem={renderMessages}
           keyExtractor={(mess) => mess.name}
-        /> : <Text style = {styles.error}>No result found</Text>
-      }
+        />
+      ) : (
+        <Text style={styles.error}>No result found</Text>
+      )}
     </View>
   );
 }
@@ -45,9 +48,9 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   error: {
-    color: 'white',
-    fontWeight: '700',
-    textAlign: 'center',
-    fontSize: 20
-  }
+    color: "white",
+    fontWeight: "700",
+    textAlign: "center",
+    fontSize: 20,
+  },
 });

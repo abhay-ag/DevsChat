@@ -5,7 +5,8 @@ import {
   TextInput,
   KeyboardAvoidingView,
   TouchableOpacity,
-  Alert
+  Alert,
+  StatusBar,
 } from "react-native";
 import React, { useState } from "react";
 import { data } from "../data/users";
@@ -17,18 +18,18 @@ const getUsers = async () => {
 };
 getUsers();
 export default function Login() {
-  const navigation = useNavigation()
+  const navigation = useNavigation();
   const [val, setVal] = useState("");
   const pressHandler = () => {
-    if(users.indexOf(val) === -1){
-        Alert.alert('Error','No such User Exists', {text: 'OK'})
-        setVal('')
-    }else{
-        navigation.dispatch(
-          StackActions.replace('Home', {
-            userName: val
-          })
-        )
+    if (users.indexOf(val) === -1) {
+      Alert.alert("Error", "No such User Exists", { text: "OK" });
+      setVal("");
+    } else {
+      navigation.dispatch(
+        StackActions.replace("Home", {
+          userName: val,
+        })
+      );
     }
   };
   return (
@@ -37,6 +38,7 @@ export default function Login() {
       style={styles.container}
     >
       <View style={styles.innerContainer}>
+        <StatusBar barStyle="light-content" backgroundColor={"rgb(10,15,20)"} />
         <Text style={styles.text}>DevsChat</Text>
         <TextInput
           style={styles.input}
@@ -45,7 +47,7 @@ export default function Login() {
           onChange={(e) => setVal(e.nativeEvent.text)}
           autoCapitalize={"none"}
           autoCorrect={false}
-          value = {val}
+          value={val}
         />
         <TouchableOpacity style={styles.cusBut} onPress={pressHandler}>
           <Text style={styles.button}>Login</Text>

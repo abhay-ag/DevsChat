@@ -1,4 +1,4 @@
-import { FlatList } from "react-native";
+import { FlatList, StatusBar } from "react-native";
 import { data } from "../data/users";
 import Posts from "./Posts";
 import Profile from "./Profile";
@@ -14,12 +14,12 @@ export default function Home(props) {
   const { userName } = props.route.params;
   const profiles = ({ item }) => (
     <Profile key={item.name} name={item.name} img={item.pic} />
-  );
-  const post = ({ item }) => {
-    if (iterator === 0) {
-      iterator ++
-      return (
-        <View>
+    );
+    const post = ({ item }) => {
+      if (iterator === 0) {
+        iterator ++
+        return (
+          <View>
           <FlatList
             horizontal={true}
             data={data}
@@ -27,7 +27,7 @@ export default function Home(props) {
             keyExtractor={(item) => item.name}
             style={styles.flatList}
             showsHorizontalScrollIndicator={false}
-          />
+            />
           <Posts
             userImg={item.pic}
             userName={item.name}
@@ -42,9 +42,9 @@ export default function Home(props) {
     }
   };
   iterator = 0
-  alert(userName)
   return (
       <View style={styles.container}>
+        <StatusBar barStyle="light-content" backgroundColor={"rgb(10,15,20)"} />
         <Header showChat={true} />
         <FlatList
           data={data}
