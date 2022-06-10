@@ -1,9 +1,19 @@
 import { View, Text, StyleSheet, StatusBar, SafeAreaView } from "react-native";
 import React from "react";
 import Footer from "./Footer";
-import Icon from "react-native-vector-icons/FontAwesome";
+import Icon from 'react-native-vector-icons/AntDesign'
+import { StackActions, useNavigation } from "@react-navigation/native";
 
 export default function UserProfile(props) {
+  const navigation = useNavigation();
+
+  const logout = () => {
+    navigation.dispatch(
+      StackActions.replace(
+        'Login'
+      )
+    )
+  }
   const { userName } = props.route.params;
   return (
     <View style={styles.container}>
@@ -11,7 +21,7 @@ export default function UserProfile(props) {
       <SafeAreaView>
         <View style={styles.header}>
           <Text style={styles.uName}>{userName}</Text>
-          <Icon name="angle-down" size={30} style={styles.icon} />
+          <Icon name="logout" size={30} style = {styles.icon} onPress = {logout} />
         </View>
       </SafeAreaView>
       <View style={styles.view}></View>
@@ -34,7 +44,8 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     borderBottomWidth: 1,
     borderColor: 'rgba(255,255,255,0.1)',
-    paddingVertical: 10
+    paddingVertical: 10,
+    justifyContent: 'space-between'
   },
   uName: {
     color: "white",
