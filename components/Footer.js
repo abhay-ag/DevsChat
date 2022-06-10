@@ -4,11 +4,13 @@ import Icon from "react-native-vector-icons/Ionicons";
 import Icon1 from "react-native-vector-icons/FontAwesome";
 import { useNavigation, StackActions } from "@react-navigation/native";
 
-export default function Footer() {
+export default function Footer(props) {
   const navigation = useNavigation();
   const goToProfile = () => {
     navigation.dispatch(
-      StackActions.replace('Profile')
+      StackActions.replace('Profile', {
+        user: props.user
+      })
     )
   }
   return (

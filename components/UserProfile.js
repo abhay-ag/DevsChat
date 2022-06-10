@@ -1,10 +1,11 @@
-import { View, Text } from 'react-native'
-import React from 'react'
+import { View, Text } from "react-native";
+import React from "react";
 
-export default function UserProfile() {
+export default function UserProfile(props) {
+  const { user } = props.route.params;
   return (
     <View>
-      <Text>UserProfile</Text>
+      <Text>{user}</Text>
     </View>
-  )
+  );
 }

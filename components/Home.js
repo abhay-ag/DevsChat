@@ -3,14 +3,12 @@ import { data } from "../data/users";
 import Posts from "./Posts";
 import Profile from "./Profile";
 import { View, Text } from "react-native";
-import React, { createContext } from "react";
+import React from "react";
 import { StyleSheet } from "react-native";
 import Footer from "./Footer";
 import Header from "./Header";
 
 let iterator = 0;
-
-export const User = createContext();
 
 export default function Home(props) {
   const { userName } = props.route.params;
@@ -44,7 +42,6 @@ export default function Home(props) {
     }
   };
   return (
-    <User.Provider value={userName}>
       <View style={styles.container}>
         <Header showChat={true} />
         <FlatList
@@ -53,9 +50,8 @@ export default function Home(props) {
           keyExtractor={(item) => item.name}
           showsVerticalScrollIndicator={false}
         />
-        <Footer />
+        <Footer user = {userName}/>
       </View>
-    </User.Provider>
   );
 }
 
