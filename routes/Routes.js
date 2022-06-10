@@ -6,6 +6,7 @@ import Home from "../components/Home";
 import Messages from "../components/Messages";
 import Chat from "../components/Chat";
 import Login from "../components/Login";
+import UserProfile from "../components/UserProfile";
 
 const Stack = createNativeStackNavigator();
 
@@ -38,6 +39,11 @@ function Routes() {
           options={{
             headerShown: false,
           }}
+        />
+        <Stack.Screen
+          name="Profile"
+          component={UserProfile}
+          options={{ headerShown: false }}
         />
       </Stack.Navigator>
     </NavigationContainer>

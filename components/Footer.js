@@ -2,15 +2,22 @@ import { View, Text, StyleSheet, SafeAreaView } from "react-native";
 import React, { useState } from "react";
 import Icon from "react-native-vector-icons/Ionicons";
 import Icon1 from "react-native-vector-icons/FontAwesome";
+import { useNavigation, StackActions } from "@react-navigation/native";
 
 export default function Footer() {
+  const navigation = useNavigation();
+  const goToProfile = () => {
+    navigation.dispatch(
+      StackActions.replace('Profile')
+    )
+  }
   return (
     <View style={styles.footContainer}>
       <Icon name={"ios-home-outline"} size={30} style={styles.icons} />
       <Icon name={"ios-search-outline"} size={30} style={styles.icons} />
       <Icon name={"ios-add-circle-outline"} size={30} style={styles.icons} />
       <Icon name={"ios-heart-outline"} size={30} style={styles.icons} />
-      <Icon1 name="user-o" size={25} style={styles.icons} />
+      <Icon1 name="user-o" size={25} style={styles.icons} onPress = {goToProfile}/>
     </View>
   );
 }

@@ -9,7 +9,7 @@ import {
 } from "react-native";
 import React, { useState } from "react";
 import { data } from "../data/users";
-import { useNavigation } from "@react-navigation/native";
+import { StackActions, useNavigation } from "@react-navigation/native";
 
 let users = [];
 const getUsers = async () => {
@@ -24,9 +24,11 @@ export default function Login() {
         Alert.alert('Error','No such User Exists', {text: 'OK'})
         setVal('')
     }else{
-        navigation.navigate('Home', {
-          userName: val
-        })
+        navigation.dispatch(
+          StackActions.replace('Home', {
+            userName: val
+          })
+        )
     }
   };
   return (
