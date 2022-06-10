@@ -2,24 +2,48 @@ import { View, Text, StyleSheet, SafeAreaView } from "react-native";
 import React, { useState } from "react";
 import Icon from "react-native-vector-icons/Ionicons";
 import Icon1 from "react-native-vector-icons/FontAwesome";
-import { useNavigation, StackActions } from "@react-navigation/native";
+import {
+  StackActions,
+  useNavigation,
+  useRoute,
+} from "@react-navigation/native";
 
 export default function Footer(props) {
   const navigation = useNavigation();
+  const { name } = useRoute();
   const goToProfile = () => {
-    navigation.dispatch(
-      StackActions.replace('Profile', {
-        user: props.user
-      })
-    )
-  }
+    if (name !== "Profile") {
+      navigation.dispatch(
+        StackActions.replace("Profile", {
+          userName: props.user,
+        })
+      );
+    }
+  };
+  const gotToHome = () => {
+    if (name !== "Home") {
+      navigation.dispatch(
+        StackActions.replace("Home", { userName: props.user })
+      );
+    }
+  };
   return (
     <View style={styles.footContainer}>
-      <Icon name={"ios-home-outline"} size={30} style={styles.icons} />
+      <Icon
+        name={"ios-home-outline"}
+        size={30}
+        style={styles.icons}
+        onPress={gotToHome}
+      />
       <Icon name={"ios-search-outline"} size={30} style={styles.icons} />
       <Icon name={"ios-add-circle-outline"} size={30} style={styles.icons} />
       <Icon name={"ios-heart-outline"} size={30} style={styles.icons} />
-      <Icon1 name="user-o" size={25} style={styles.icons} onPress = {goToProfile}/>
+      <Icon1
+        name="user-o"
+        size={25}
+        style={styles.icons}
+        onPress={goToProfile}
+      />
     </View>
   );
 }

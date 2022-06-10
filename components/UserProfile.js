@@ -3,11 +3,11 @@ import React from "react";
 import Footer from "./Footer";
 
 export default function UserProfile(props) {
-  const { user } = props.route.params;
+  const { userName } = props.route.params;
   return (
     <View style={styles.container}>
-      <Text>{user}</Text>
-      <Footer />
+      <Text>{userName}</Text>
+      <Footer user = {userName}/>
     </View>
   );
 }

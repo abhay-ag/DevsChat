@@ -3,12 +3,12 @@ import { data } from "../data/users";
 import Posts from "./Posts";
 import Profile from "./Profile";
 import { View, Text } from "react-native";
-import React from "react";
+import React, { useState } from "react";
 import { StyleSheet } from "react-native";
 import Footer from "./Footer";
 import Header from "./Header";
 
-let iterator = 0;
+let iterator = 0
 
 export default function Home(props) {
   const { userName } = props.route.params;
@@ -17,7 +17,7 @@ export default function Home(props) {
   );
   const post = ({ item }) => {
     if (iterator === 0) {
-      iterator++;
+      iterator ++
       return (
         <View>
           <FlatList
@@ -41,6 +41,8 @@ export default function Home(props) {
       );
     }
   };
+  iterator = 0
+  alert(userName)
   return (
       <View style={styles.container}>
         <Header showChat={true} />
