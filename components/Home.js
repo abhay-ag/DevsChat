@@ -3,14 +3,17 @@ import { data } from "../data/users";
 import Posts from "./Posts";
 import Profile from "./Profile";
 import { View, Text } from "react-native";
-import React from "react";
+import React, { createContext } from "react";
 import { StyleSheet } from "react-native";
 import Footer from "./Footer";
 import Header from "./Header";
 
 let iterator = 0;
 
-export default function Home() {
+export const User = createContext();
+
+export default function Home(props) {
+  const { userName } = props.route.params;
   const profiles = ({ item }) => (
     <Profile key={item.name} name={item.name} img={item.pic} />
   );
@@ -41,16 +44,18 @@ export default function Home() {
     }
   };
   return (
-    <View style={styles.container}>
-      <Header showChat={true}/>
-      <FlatList
-        data={data}
-        renderItem={post}
-        keyExtractor={(item) => item.name}
-        showsVerticalScrollIndicator={false}
-      />
-      <Footer />
-    </View>
+    <User.Provider value={userName}>
+      <View style={styles.container}>
+        <Header showChat={true} />
+        <FlatList
+          data={data}
+          renderItem={post}
+          keyExtractor={(item) => item.name}
+          showsVerticalScrollIndicator={false}
+        />
+        <Footer />
+      </View>
+    </User.Provider>
   );
 }
 

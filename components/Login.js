@@ -24,7 +24,9 @@ export default function Login() {
         Alert.alert('Error','No such User Exists', {text: 'OK'})
         setVal('')
     }else{
-        navigation.navigate('Home')
+        navigation.navigate('Home', {
+          userName: val
+        })
     }
   };
   return (
