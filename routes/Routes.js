@@ -24,7 +24,7 @@ function Routes() {
         <Stack.Screen
           name="Home"
           component={Home}
-          options={{ headerShown: false }}
+          options={{ headerShown: false , animation: 'none'}}
         />
         <Stack.Screen
           name="Messages"
@@ -39,11 +39,14 @@ function Routes() {
           options={{
             headerShown: false,
           }}
-        />
+          />
         <Stack.Screen
           name="Profile"
           component={UserProfile}
-          options={{ headerShown: false }}
+          options={{ 
+            headerShown: false ,
+            animation: 'none'
+          }}
         />
       </Stack.Navigator>
     </NavigationContainer>
