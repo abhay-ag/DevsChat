@@ -1,9 +1,8 @@
 import { View, Text, TextInput, StyleSheet } from "react-native";
 import React from "react";
-import { data } from "../../data/users";
 
 
-export default function Search({ setMess, setRes }) {
+export default function Search({ setMess, data }) {
   const handleChange = (text) => {
     const inputVal = text.nativeEvent.text.toLowerCase();
     if(inputVal.length !== 0){

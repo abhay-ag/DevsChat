@@ -68,7 +68,7 @@ export default function Home(props) {
   return (
     <View style={styles.container}>
       <StatusBar barStyle="light-content" backgroundColor={"rgb(10,15,20)"} />
-      <Header showChat={true} />
+      <Header showChat={true} data = {users}/>
       <FlatList
         data={data}
         renderItem={post}

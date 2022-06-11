@@ -10,11 +10,13 @@ import React from "react";
 import Icon from "react-native-vector-icons/Ionicons";
 import { useNavigation } from "@react-navigation/native";
 
-export default function Header({ showChat, showBack, userName }) {
+export default function Header({ showChat, showBack, userName, data }) {
   const navigation = useNavigation();
 
   const onPressHandler = () => {
-    navigation.navigate("Messages");
+    navigation.navigate("Messages", {
+      data: data
+    });
   };
 
   const goBack = () => {

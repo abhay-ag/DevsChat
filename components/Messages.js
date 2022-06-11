@@ -2,10 +2,10 @@ import { View, Text, StyleSheet, FlatList, StatusBar } from "react-native";
 import React, { useState, useEffect } from "react";
 import Header from "./Header";
 import Message from "./components/Message";
-import { data } from "../data/users";
 import Search from "./components/Search";
 
-export default function Messages() {
+export default function Messages(props) {
+  const {data} = props.route.params
   const [mess, setMess] = useState(data);
   const [res, setRes] = useState(false);
   const renderMessages = ({ item }) => {
@@ -22,7 +22,7 @@ export default function Messages() {
     <View style={styles.container}>
       <StatusBar barStyle="light-content" backgroundColor={"rgb(10,15,20)"} />
       <Header showBack={true} />
-      <Search setMess={setMess} setRes={setRes} />
+      <Search setMess={setMess} data = {data}/>
       <Text style={styles.text}>Messages</Text>
       {res === false ? (
         <FlatList
