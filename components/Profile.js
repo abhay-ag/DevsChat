@@ -8,7 +8,7 @@ export default function Profile(props) {
           source={{ uri: `${props.img}` }}
           style={styles.profileImg}
         />
-        <Text style={styles.profileText}>{props.name}</Text>
+        <Text style={styles.profileText}>{props.currUser ? 'Your Story' : props.name}</Text>
       </View>
   );
 }

@@ -8,26 +8,49 @@ import { StyleSheet } from "react-native";
 import Footer from "./Footer";
 import Header from "./Header";
 
-let iterator = 0
+let iterator = 0;
 
 export default function Home(props) {
+  let currUser = [];
+  let users = [];
   const { userName } = props.route.params;
-  const profiles = ({ item }) => (
-    <Profile key={item.name} name={item.name} img={item.pic} />
-    );
-    const post = ({ item }) => {
-      if (iterator === 0) {
-        iterator ++
-        return (
-          <View>
+  data.filter((ob) => {
+    if (ob.name === userName) {
+      currUser.push(ob);
+    } else {
+      users.push(ob);
+    }
+  });
+  const currentUser = ({ item }) => <Profile key={item.name} name={item.name} img={item.pic} currUser = {true}/>
+  const profiles = ({ item }) => {
+    if(iterator === 0){
+      iterator++
+      return(
+        <View style = {{flexDirection: 'row'}}>
+          <FlatList 
+            data={currUser}
+            renderItem = {currentUser}
+            keyExtractor = { (item) => item.name}
+            scrollEnabled = {false}
+          />
+          <Profile key={item.name} name={item.name} img={item.pic} />
+        </View>
+      )
+    }
+    return <Profile key={item.name} name={item.name} img={item.pic} />;
+  };
+  const post = ({ item }) => {
+    if (iterator === 0) {
+      return (
+        <View>
           <FlatList
             horizontal={true}
-            data={data}
+            data={users}
             renderItem={profiles}
             keyExtractor={(item) => item.name}
             style={styles.flatList}
             showsHorizontalScrollIndicator={false}
-            />
+          />
           <Posts
             userImg={item.pic}
             userName={item.name}
@@ -41,19 +64,19 @@ export default function Home(props) {
       );
     }
   };
-  iterator = 0
+  iterator = 0;
   return (
-      <View style={styles.container}>
-        <StatusBar barStyle="light-content" backgroundColor={"rgb(10,15,20)"} />
-        <Header showChat={true} />
-        <FlatList
-          data={data}
-          renderItem={post}
-          keyExtractor={(item) => item.name}
-          showsVerticalScrollIndicator={false}
-        />
-        <Footer user = {userName}/>
-      </View>
+    <View style={styles.container}>
+      <StatusBar barStyle="light-content" backgroundColor={"rgb(10,15,20)"} />
+      <Header showChat={true} />
+      <FlatList
+        data={data}
+        renderItem={post}
+        keyExtractor={(item) => item.name}
+        showsVerticalScrollIndicator={false}
+      />
+      <Footer user={userName} />
+    </View>
   );
 }
 
