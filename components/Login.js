@@ -66,6 +66,7 @@ export default function Login() {
           autoCapitalize={"none"}
           autoCorrect={false}
           value={val}
+          onSubmitEditing = {pressHandler}
         />
         {flag && (
           <TextInput
@@ -77,6 +78,7 @@ export default function Login() {
             autoCorrect={false}
             value={pass}
             secureTextEntry={true}
+            onSubmitEditing = {pressHandler}
           />
         )}
         <TouchableOpacity style={styles.cusBut} onPress={pressHandler}>
