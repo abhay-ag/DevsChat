@@ -38,19 +38,19 @@ export const data = [
     rName: "Abhiraj Singh Chatrath",
     password: 'abhiraj057'
   },
-  {
-    name: "AbhishekM",
-    pic: "https://randomuser.me/api/portraits/men/4.jpg",
-    posts: [
-      "https://randomuser.me/api/portraits/men/16.jpg",
-      "https://randomuser.me/api/portraits/men/17.jpg",
-      "https://randomuser.me/api/portraits/men/18.jpg",
-      "https://randomuser.me/api/portraits/men/19.jpg",
-      "https://randomuser.me/api/portraits/men/20.jpg",
-    ],
-    rName: "Abhishek Mehta",
-    password: 'abhishek058'
-  },
+  // {
+  //   name: "AbhishekM",
+  //   pic: "https://randomuser.me/api/portraits/men/4.jpg",
+  //   posts: [
+  //     "https://randomuser.me/api/portraits/men/16.jpg",
+  //     "https://randomuser.me/api/portraits/men/17.jpg",
+  //     "https://randomuser.me/api/portraits/men/18.jpg",
+  //     "https://randomuser.me/api/portraits/men/19.jpg",
+  //     "https://randomuser.me/api/portraits/men/20.jpg",
+  //   ],
+  //   rName: "Abhishek Mehta",
+  //   password: 'abhishek058'
+  // },
   {
     name: "AbhishekT",
     pic: "https://randomuser.me/api/portraits/men/5.jpg",
