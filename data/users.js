@@ -11,7 +11,7 @@ export const data = [
     ],
     rName: "Abhay Aggarwal",
     password: 'abhay_ag',
-    mainPic: 'https://lh3.googleusercontent.com/pw/AM-JKLWfyKgp5vTZCsnNXxulKzm-SE933s_DuRNdMC7lsaWGDFO5UTGlf1wSoiSk4CDOakkYnvIPVz3cMH7TyurKhoEZCkMRH9BYpkyOstT7gxv0CKohsyl7jgnuj-43cRFZRTuGOJtzwhV3qFr9QbMjviqQ=w1218-h1826-no?authuser=0'
+    mainPic: 'https://lh3.googleusercontent.com/pw/AM-JKLWFXmXLG0ZTZmdhg6uMyIR1knx0s_MonhFRv4qBo6MQ5Rq2j1-0fL2-G7hJgARFPZfU9F1qzZFeweI2_rI2mDmH4OHMAhoP6u0UCNych7M1rsyaI8bl4euRN0o04XwK3cbVEWX3QEKFQln7TxI272SD=w1296-h1942-no'
   },
   {
     name: "v0nser",
@@ -25,7 +25,7 @@ export const data = [
     ],
     rName: "Vaibhav Singh",
     password: 'vonser',
-    mainPic: 'https://lh3.googleusercontent.com/pw/AM-JKLUwuaPrvevZ9ZIV7o2fAKZUA33-EdWfwx-MiPDDfxyonVBkfACFIJADfeUpOR58Nwr872fZduh5N4QnKbl7qA43RVRAnc4SpYv1jPaNKiUFZoEBbZ3SOnSlZVMZZWTZvbJOmEi-w_9orGTE9s-tSeP_=w1218-h1826-no?authuser=0'
+    mainPic: 'https://lh3.googleusercontent.com/pw/AM-JKLWgt1_gFg-Acdh-caLkBcPOERi90d9ZoQzpqeg3G1UfU_pAyI_-dLQ0kFVGhfb2epvcPRA8UScFfYYhdBQOwq_t4mWkkgpbuSbtYFe1-koGyneVvQX-gKY2-ftCHhBw7H5ukrrcX6Yh6483j1oNAk7Q=w1296-h1942-no'
   },
   {
     name: "abhi-cyber",
@@ -39,7 +39,7 @@ export const data = [
     ],
     rName: "Abhiraj Singh Chatrath",
     password: 'abhiraj057',
-    mainPic: 'https://lh3.googleusercontent.com/pw/AM-JKLUZ7Ms75ejIFBJWDQq_BMu8Q79Qr5gC4eCuFHUWMXiipRifms8wXjucw0Kzh2hN-PrBv8rHU1ZDZDOqAPaL1ZtArQeZnc9s0mXfeDuHCsEjne6fYVhO8VE3JCyOvd3xQY9LnrKGFPflzF65Nz6y-ENM=w1218-h1826-no?authuser=0'
+    mainPic: 'https://lh3.googleusercontent.com/pw/AM-JKLWgkvJA73ky_czIvCRF7S1DL9p2rGNhX_JSE-QT3lmvjcmgtAE2SS_pbgzA8Ug-hAl0zTxzBXPUpDLRwoXF0VVuN754ieuZVrroPEHTGWzJsWohlkxqMx02klXLck5tdbaKIXzA9ORHiwrOSd1Qau5D=w1296-h1942-no'
   },
   // {
   //   name: "AbhishekM",
@@ -66,6 +66,6 @@ export const data = [
     ],
     rName: "Abhishek Thakur",
     password: 'abhishek70',
-    mainPic: 'https://lh3.googleusercontent.com/pw/AM-JKLWtUOmZLf6zoRHcW8QrZ9rJkA3Srcj6tzRag3TH1rnj0aoFKgTefIwdb0bDT4A3afua4sIhzCipqA9dfWBplgeq7HvUZBBp1FeCF1z7VTOSG_A38_WY3sdQ6UMTTgwBF4nYDNomNtPRVrtfTV4gplOn=w1218-h1826-no?authuser=0'
+    mainPic: 'https://lh3.googleusercontent.com/pw/AM-JKLXqjrE8k4RGj2QRuIPSv1C-6swpORkWL9iv7cLwtSBpeOtW7T41fruKMynBOM0v_CnwuVA4rbToRxOU84U9727J_Ps7bUQK_2q0Pcun0BF84ESitg1gzFfLGLrwuyOQRYfIFFk6sHCZmGKL3-absaNf=w1296-h1942-no'
   },
 ];

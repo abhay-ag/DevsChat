@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet, StatusBar, SafeAreaView } from "react-native";
+import { View, Text, StyleSheet, StatusBar, SafeAreaView, Image } from "react-native";
 import React from "react";
 import Footer from "./Footer";
 import Icon from 'react-native-vector-icons/AntDesign'
@@ -14,7 +14,7 @@ export default function UserProfile(props) {
       )
     )
   }
-  const { userName } = props.route.params;
+  const { userName, userPic } = props.route.params;
   return (
     <View style={styles.container}>
       <StatusBar barStyle="light-content" backgroundColor={"rgb(10,15,20)"} />
@@ -24,7 +24,9 @@ export default function UserProfile(props) {
           <Icon name="logout" size={25} style = {styles.icon} onPress = {logout} />
         </View>
       </SafeAreaView>
-      <View style={styles.view}></View>
+      <View style={styles.view}>
+        <Image style = {styles.profilePic} source = {{uri: userPic}}/>
+      </View>
       <Footer user={userName} />
     </View>
   );
@@ -56,4 +58,8 @@ const styles = StyleSheet.create({
     color: "white",
     marginHorizontal: 20
   },
+  profilePic: {
+    width: 100,
+    height: 100,
+  }
 });

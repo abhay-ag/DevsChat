@@ -7,15 +7,26 @@ import {
   useNavigation,
   useRoute,
 } from "@react-navigation/native";
+import { data } from '../data/users'
 
+let currPic;
 export default function Footer(props) {
   const navigation = useNavigation();
   const { name } = useRoute();
+  const proPic = async () => {
+      data.map((ob) => {
+      if(ob.name === props.user){
+        currPic = ob.mainPic
+      }
+    })
+  }
+  proPic()
   const goToProfile = () => {
     if (name !== "Profile") {
       navigation.dispatch(
         StackActions.replace("Profile", {
           userName: props.user,
+          userPic: currPic
         })
       );
     }
