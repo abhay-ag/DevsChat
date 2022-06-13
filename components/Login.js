@@ -13,23 +13,41 @@ import { data } from "../data/users";
 import { StackActions, useNavigation } from "@react-navigation/native";
 
 let users = [];
+let passwords = [];
 const getUsers = async () => {
   users = data.map((ob) => ob.name);
+  passwords = data.map((ob) => ob.password);
 };
 getUsers();
 export default function Login() {
   const navigation = useNavigation();
   const [val, setVal] = useState("");
+  const [pass, setPass] = useState("");
+  const [flag, setFlag] = useState(false);
   const pressHandler = () => {
-    if (users.indexOf(val) === -1) {
-      Alert.alert("Error", "No such User Exists", { text: "OK" });
-      setVal("");
-    } else {
-      navigation.dispatch(
-        StackActions.replace("Home", {
-          userName: val,
-        })
-      );
+    if (!flag) {
+      if (val !== "") {
+        if (users.indexOf(val) === -1) {
+          Alert.alert("Error", "No such User Exists", { text: "OK" });
+          setVal("");
+        } else {
+          setFlag(true);
+        }
+      } else {
+        Alert.alert("Warning", "Please Enter a Valid Username", { text: "OK" });
+      }
+    }else{
+      let indexUser = users.indexOf(val);
+      if(pass === passwords[indexUser]){
+        navigation.dispatch(
+          StackActions.replace("Home", {
+            userName: val,
+          })
+        );
+      }else{
+        Alert.alert("Error", "Incorrect Password", {text: 'OK'})
+        setPass('')
+      }
     }
   };
   return (
@@ -49,8 +67,20 @@ export default function Login() {
           autoCorrect={false}
           value={val}
         />
+        {flag && (
+          <TextInput
+            style={styles.inputPass}
+            placeholder="Enter password"
+            placeholderTextColor={"rgba(255,255,255,0.16)"}
+            onChange={(e) => setPass(e.nativeEvent.text)}
+            autoCapitalize={"none"}
+            autoCorrect={false}
+            value={pass}
+            secureTextEntry={true}
+          />
+        )}
         <TouchableOpacity style={styles.cusBut} onPress={pressHandler}>
-          <Text style={styles.button}>Login</Text>
+          <Text style={styles.button}>{flag ? "Login" : "Check User"}</Text>
         </TouchableOpacity>
       </View>
     </KeyboardAvoidingView>
@@ -66,7 +96,8 @@ const styles = StyleSheet.create({
     flexDirection: "row",
   },
   input: {
-    borderRadius: 10,
+    borderTopStartRadius: 10,
+    borderTopEndRadius: 10,
     backgroundColor: "rgba(255,255,255,0.1)",
     paddingHorizontal: 15,
     paddingVertical: 10,
@@ -74,6 +105,8 @@ const styles = StyleSheet.create({
     fontWeight: "700",
     color: "white",
     width: "100%",
+    borderBottomWidth: 1,
+    borderBottomColor: "rgba(255,255,255,0.19)",
   },
   text: {
     fontFamily: "Dancing_Script",
@@ -104,5 +137,17 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     overflow: "hidden",
     borderRadius: 10,
+  },
+  inputPass: {
+    borderBottomStartRadius: 10,
+    borderBottomEndRadius: 10,
+    backgroundColor: "rgba(255,255,255,0.1)",
+    paddingHorizontal: 15,
+    paddingVertical: 10,
+    fontSize: 20,
+    fontWeight: "700",
+    color: "white",
+    width: "100%",
+    marginBottom: 10,
   },
 });

@@ -21,7 +21,7 @@ export default function UserProfile(props) {
       <SafeAreaView>
         <View style={styles.header}>
           <Text style={styles.uName}>{userName}</Text>
-          <Icon name="logout" size={30} style = {styles.icon} onPress = {logout} />
+          <Icon name="logout" size={25} style = {styles.icon} onPress = {logout} />
         </View>
       </SafeAreaView>
       <View style={styles.view}></View>

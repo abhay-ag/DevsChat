@@ -10,6 +10,7 @@ export const data = [
       "https://randomuser.me/api/portraits/men/5.jpg",
     ],
     rName: "Abhay Aggarwal",
+    password: 'abhay_ag'
   },
   {
     name: "v0nser",
@@ -22,6 +23,7 @@ export const data = [
       "https://randomuser.me/api/portraits/men/10.jpg",
     ],
     rName: "Vaibhav Singh",
+    password: 'vonser'
   },
   {
     name: "abhi-cyber",
@@ -34,6 +36,7 @@ export const data = [
       "https://randomuser.me/api/portraits/men/15.jpg",
     ],
     rName: "Abhiraj Singh Chatrath",
+    password: 'abhiraj057'
   },
   {
     name: "AbhishekM",
@@ -46,6 +49,7 @@ export const data = [
       "https://randomuser.me/api/portraits/men/20.jpg",
     ],
     rName: "Abhishek Mehta",
+    password: 'abhishek058'
   },
   {
     name: "AbhishekT",
@@ -58,5 +62,6 @@ export const data = [
       "https://randomuser.me/api/portraits/men/25.jpg",
     ],
     rName: "Abhishek Thakur",
+    password: 'abhishek70'
   },
 ];
