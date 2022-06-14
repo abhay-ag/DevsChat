@@ -67,6 +67,7 @@ export default function Login() {
           autoCorrect={false}
           value={val}
           onSubmitEditing = {pressHandler}
+          onFocus = {() => {setFlag(false)}}
         />
         {flag && (
           <TextInput
@@ -81,9 +82,6 @@ export default function Login() {
             onSubmitEditing = {pressHandler}
           />
         )}
-        <TouchableOpacity style={styles.cusBut} onPress={pressHandler}>
-          <Text style={styles.button}>{flag ? "Login" : "Check User"}</Text>
-        </TouchableOpacity>
       </View>
     </KeyboardAvoidingView>
   );
