@@ -37,7 +37,7 @@ export const data = [
       "https://randomuser.me/api/portraits/men/14.jpg",
       "https://randomuser.me/api/portraits/men/15.jpg",
     ],
-    rName: "Abhiraj Singh Chatrath",
+    rName: "Abhiraj Singh",
     password: 'abhiraj057',
     mainPic: 'https://lh3.googleusercontent.com/pw/AM-JKLWgkvJA73ky_czIvCRF7S1DL9p2rGNhX_JSE-QT3lmvjcmgtAE2SS_pbgzA8Ug-hAl0zTxzBXPUpDLRwoXF0VVuN754ieuZVrroPEHTGWzJsWohlkxqMx02klXLck5tdbaKIXzA9ORHiwrOSd1Qau5D=w1296-h1942-no'
   },

@@ -9,7 +9,7 @@ import {
 } from "@react-navigation/native";
 import { data } from '../data/users'
 
-let currPic;
+let currPic, realName;
 export default function Footer(props) {
   const navigation = useNavigation();
   const { name } = useRoute();
@@ -17,6 +17,7 @@ export default function Footer(props) {
       data.map((ob) => {
       if(ob.name === props.user){
         currPic = ob.mainPic
+        realName = ob.rName
       }
     })
   }
@@ -26,7 +27,8 @@ export default function Footer(props) {
       navigation.dispatch(
         StackActions.replace("Profile", {
           userName: props.user,
-          userPic: currPic
+          userPic: currPic,
+          realName: realName
         })
       );
     }

@@ -2,7 +2,9 @@ import AppLoading from "expo-app-loading";
 import * as Font from "expo-font";
 import { useState } from "react";
 import Routes from './routes/Routes'
+import { LogBox } from 'react-native';
 
+LogBox.ignoreAllLogs(true)
 const getFonts = () => Font.loadAsync({
   Dancing_Script: require('./assets/fonts/Courgette.ttf')
 })
